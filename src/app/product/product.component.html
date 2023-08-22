@@ -1,0 +1,45 @@
+<div class="container">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <h1>Please enter the product details</h1>
+  </div>
+  <div *ngIf="message" class="alert alert-warning" style="display: flex; justify-content: center; align-items: center;">
+    {{ message }}
+  </div>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <fieldset class="form-group">
+        <label for="productId">Product Id</label>
+        <input type="number" class="form-control" formControlName="productId" id="productId" />
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" class="form-control" formControlName="productName" id="productName" />
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="manDate">Manufacture Date</label>
+        <input type="date" class="form-control" formControlName="manDate" id="manDate" />
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="expDate">Expiry Date</label>
+        <input type="date" class="form-control" formControlName="expDate" id="expDate" />
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" formControlName="price" id="price" />
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" formControlName="quantity" id="quantity" />
+      </fieldset>
+
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="submit" class="btn btn-success m-5">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

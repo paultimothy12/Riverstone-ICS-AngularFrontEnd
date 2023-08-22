@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="text-center"><h1>Stocks</h1></div>
+  <div *ngIf="message" class="alert alert-warning text-center">{{ message }}</div>
+  <div class="text-center">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Manufacturing Date</th>
+        <th>Expiry Date</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{ productId }}</td>
+        <td>{{ productName }}</td>
+        <td>{{ manDate }}</td>
+        <td>{{ expDate }}</td>
+        <td>{{ price }}</td>
+        <td>{{ quantity }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteProduct(productId)">Delete</button>
+        </td>
+        <td>
+          <button class="btn btn-warning" (click)="updateProduct(productId)">Update</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-success m-5" (click)="postNewProduct()">ADD NEW PRODUCT</button>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container">
+  <div style="display: flex; justify-content: center; align-items: center;"><h1>Stocks</h1></div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Manufacturing Date</th>
+        <th>Expiry Date</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.productId }}</td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.manDate | date }}</td>
+        <td>{{ product.expDate | date }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteProduct(product.productId)">Delete</button>
+        </td>
+        <td>
+          <button class="btn btn-warning" (click)="updateProduct(product.productId)">Update</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button
+      style="display: flex; justify-content: center; align-items: center;"
+      class="btn btn-success m-5"
+      (click)="postNewProduct()"
+    >
+      ADD NEW PRODUCT
+    </button>
+  </div>
+</div>

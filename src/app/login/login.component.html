@@ -1,0 +1,16 @@
+<div class="Login" style="display: flex; justify-content: center; align-items: center;">
+  <div class="LoginForm">
+    <div>
+      <label>User Name:</label>
+      <input type="text" name="username" [(ngModel)]="username" autoComplete="off" />
+    </div>
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password" [(ngModel)]="password" />
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" name="login" (click)="handleSubmit()">login</button>
+    </div>
+    <div *ngIf="showErrorMessage" class="errorMessage">Authentication Failed.</div>
+  </div>
+</div>
