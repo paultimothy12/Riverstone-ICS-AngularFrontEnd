@@ -38,6 +38,7 @@ export class ProductDetailComponent implements OnInit {
             this.price = data.price;
             this.quantity = data.quantity;
           }, error => {
+            this.message = error.response.data.message;
             console.error('Error fetching specific product data:', error);
           });
 

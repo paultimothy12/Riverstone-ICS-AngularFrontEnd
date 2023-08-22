@@ -48,6 +48,7 @@ export class ProductComponent implements OnInit {
             this.quantity = data.quantity;
             this.productForm.patchValue(data);
           }, error => {
+            this.message = error.response.data.message;
             console.error('Error fetching specific product data:', error);
           });
       }

@@ -1,12 +1,14 @@
-<div class="SpecificProd">
-  <div class="Prod">
-    <div>
-      <label>Enter ProductID:</label>
-      <input type="number" [(ngModel)]="id" />
-    </div>
-    <div>
-      <button type="button" name="submit" (click)="handleSubmit()">search</button>
-    </div>
-  </div>
-</div>
+<section class="pb-4">
+  <div class="bg-white border rounded-5">
+    <section class="w-100 p-4 d-flex justify-content-center pb-4">
+      <form>
+        <div class="form-outline mb-4">
+          <label class="form-label" >Enter Product ID</label>
+          <input type="number"  name = "id" [(ngModel)]="id" autoComplete="off" class="form-control"/>
+        </div>
 
+        <button type="button" name="submit" (click)="handleSubmit()" class="btn btn-primary btn-block mb-4">Search</button>
+      </form>
+    </section>
+  </div>
+</section>

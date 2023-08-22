@@ -1,30 +1,12 @@
-<header class="border-bottom border-light border-5 mb-5 p-2">
-  <div class="container">
-    <div class="row">
-      <nav class="navbar navbar-expand-lg">
-        <a routerLink="/welcome"><img ngSrc="assets/logo.jpg" width="100" height="100" alt="logo"></a>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav">
-            <li class="nav-item" *ngIf="authService.authenticator()">
-              <a class="nav-link" routerLink="/welcome">Home</a>
-            </li>
-            <li class="nav-item" *ngIf="authService.authenticator()">
-              <a class="nav-link" routerLink="/products">Stocks</a>
-            </li>
-            <li class="nav-item" *ngIf="authService.authenticator()">
-              <a class="nav-link" routerLink="/specific">Search</a>
-            </li>
-          </ul>
-        </div>
-        <ul class="navbar-nav">
-          <li class="nav-item" *ngIf="!authService.authenticator()">
-            <a class="nav-link" routerLink="/login">Login</a>
-          </li>
-          <li class="nav-item" *ngIf="authService.authenticator()">
-            <button class="nav-link" (click)="logout()">Logout</button>
-          </li>
-        </ul>
-      </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div><a class="navbar-brand" routerLink="/welcome"><img src="assets/logo.jpg" width="100" alt="logo"></a></div>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/welcome" *ngIf="authService.authenticator()">Home</a>
+      <a class="nav-item nav-link" routerLink="/products" *ngIf="authService.authenticator()">Products</a>
+      <a class="nav-item nav-link" routerLink="/specific" *ngIf="authService.authenticator()">Search</a>
+      <a class="nav-item nav-link" routerLink="/login" *ngIf="!authService.authenticator()">Login</a>
+      <button (click)="logout()" *ngIf="authService.authenticator()">Logout</button>
     </div>
   </div>
-</header>
+</nav>
